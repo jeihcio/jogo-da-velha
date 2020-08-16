@@ -15,6 +15,7 @@ import static javax.swing.JOptionPane.showMessageDialog;
 public class main extends javax.swing.JFrame {
 
     private mainController controller;
+    private boolean isFimJogo;
 
     /**
      * Creates new form main
@@ -22,6 +23,7 @@ public class main extends javax.swing.JFrame {
     public main() {
         initComponents();
         controller = new mainController();
+        isFimJogo = false;
     }
 
     /**
@@ -177,10 +179,10 @@ public class main extends javax.swing.JFrame {
         JButton botaoAtual = (JButton) evt.getSource();
 
         if (botaoAtual.getText().isEmpty()) {
-            controller.setPecaNaCasa(botaoAtual.getName());
-            botaoAtual.setText(controller.PegarEAlterarPecaAtual());
+            controller.setPecaBotao(botaoAtual);
 
             if (controller.isFimJogo()) {
+                isFimJogo = true;
                 showMessageDialog(null, "Fim de jogo");
             }
         }
