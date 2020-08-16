@@ -40,15 +40,20 @@ public class main extends javax.swing.JFrame {
     private void limparJogo() {
         for (JButton botao : listaBotoes) {
             botao.setText("");
+            botao.setForeground(Color.BLACK);
+            botao.setBackground(null);
         }
     }
 
     private void setCasasVencedoras(int[] casasVencedoras) {
-        for (int i = 0; i < casasVencedoras.length; i++) {
-            for (JButton botao : listaBotoes) {
-                int numeroBotao = Integer.parseInt(botao.getName());
-                if (numeroBotao == casasVencedoras[i]) {
-                  botao.setBackground(Color.red);
+        if (casasVencedoras != null) {
+            for (int i = 0; i < casasVencedoras.length; i++) {
+                for (JButton botao : listaBotoes) {
+                    int numeroBotao = Integer.parseInt(botao.getName());
+                    if (numeroBotao == casasVencedoras[i]) {
+                        botao.setForeground(Color.WHITE);
+                        botao.setBackground(Color.red);
+                    }
                 }
             }
         }

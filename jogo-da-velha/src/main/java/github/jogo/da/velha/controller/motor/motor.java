@@ -25,7 +25,7 @@ public class motor {
     }
 
     public int[] getCasasVencedoras() {
-        casasVencedoras = new int[3];
+        casasVencedoras = null;
 
         if (linhas.getCasasVencedoras().length > 0) {
             casasVencedoras = linhas.getCasasVencedoras();
