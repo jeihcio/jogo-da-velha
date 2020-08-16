@@ -5,6 +5,8 @@
  */
 package github.jogo.da.velha.controller;
 
+import github.jogo.da.velha.controller.motor.motor;
+import github.jogo.da.velha.model.pecas;
 import javax.swing.JButton;
 
 /**
@@ -12,17 +14,15 @@ import javax.swing.JButton;
  * @author Jeihcio
  */
 public class mainController {
-
-    private enum pecas {
-        X, O
-    };
-
+    
     private pecas[] casas;
     private pecas pecaAtual;
     private pecas vencedor;
     private boolean isFimJogo;
+    private motor motor;
 
     public mainController() {
+        motor = new motor();
         pecaAtual = pecas.X;
         casas = new pecas[9];
         vencedor = null;
@@ -60,7 +60,7 @@ public class mainController {
     }
 
     public boolean isVencedor() {
-        return false;
+        return motor.isVencedor(casas);
     }
 
     public boolean isFimJogo() {
