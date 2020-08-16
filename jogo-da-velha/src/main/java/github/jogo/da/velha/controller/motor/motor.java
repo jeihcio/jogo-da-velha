@@ -5,7 +5,6 @@
  */
 package github.jogo.da.velha.controller.motor;
 
-import github.jogo.da.velha.controller.motor.colunas;
 import github.jogo.da.velha.model.pecas;
 
 /**
@@ -21,7 +20,7 @@ public class motor {
     }
 
     public boolean isVencedor(pecas[] casas) {
-        return true;
+        return (colunas.isVencedor(casas));
     }
 
 }

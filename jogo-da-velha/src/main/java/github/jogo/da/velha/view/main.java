@@ -179,12 +179,16 @@ public class main extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JButton botaoAtual = (JButton) evt.getSource();
 
-        if (botaoAtual.getText().isEmpty()) {
-            controller.setPecaBotao(botaoAtual, botaoAtual.getName());
+        if (isFimJogo) {
 
-            if (controller.isFimJogo()) {
-                isFimJogo = true;
-                showMessageDialog(null, "Fim de jogo");
+        } else {
+            if (botaoAtual.getText().isEmpty()) {
+                controller.setPecaBotao(botaoAtual, botaoAtual.getName());
+
+                if (controller.isFimJogo()) {
+                    isFimJogo = true;
+                    showMessageDialog(null, "Fim de jogo");
+                }
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
