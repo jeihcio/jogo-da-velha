@@ -16,11 +16,29 @@ public class motor {
     private colunas colunas;
     private linhas linhas;
     private diagonal diagonal;
+    private int[] casasVencedoras = new int[3];
 
     public motor() {
         colunas = new colunas();
         linhas = new linhas();
         diagonal = new diagonal();
+    }
+
+    public int[] getCasasVencedoras() {
+        casasVencedoras = new int[3];
+
+        if (linhas.getCasasVencedoras().length > 0) {
+            casasVencedoras = linhas.getCasasVencedoras();
+
+        } else if (colunas.getCasasVencedoras().length > 0) {
+            casasVencedoras = colunas.getCasasVencedoras();
+
+        } else if (diagonal.getCasasVencedoras().length > 0) {
+            casasVencedoras = diagonal.getCasasVencedoras();
+
+        }
+
+        return casasVencedoras;
     }
 
     public boolean isVencedor(pecas[] casas) {

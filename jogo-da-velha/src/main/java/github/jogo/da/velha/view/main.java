@@ -6,6 +6,7 @@
 package github.jogo.da.velha.view;
 
 import github.jogo.da.velha.controller.mainController;
+import java.awt.Color;
 import javax.swing.JButton;
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -16,7 +17,7 @@ import static javax.swing.JOptionPane.showMessageDialog;
 public class main extends javax.swing.JFrame {
 
     private mainController controller;
-    private boolean isFimJogo;
+    private JButton[] listaBotoes = new JButton[9];
 
     /**
      * Creates new form main
@@ -24,7 +25,33 @@ public class main extends javax.swing.JFrame {
     public main() {
         initComponents();
         controller = new mainController();
-        isFimJogo = false;
+
+        listaBotoes[0] = jButton1;
+        listaBotoes[1] = jButton2;
+        listaBotoes[2] = jButton3;
+        listaBotoes[3] = jButton4;
+        listaBotoes[4] = jButton5;
+        listaBotoes[5] = jButton6;
+        listaBotoes[6] = jButton7;
+        listaBotoes[7] = jButton8;
+        listaBotoes[8] = jButton9;
+    }
+
+    private void limparJogo() {
+        for (JButton botao : listaBotoes) {
+            botao.setText("");
+        }
+    }
+
+    private void setCasasVencedoras(int[] casasVencedoras) {
+        for (int i = 0; i < casasVencedoras.length; i++) {
+            for (JButton botao : listaBotoes) {
+                int numeroBotao = Integer.parseInt(botao.getName());
+                if (numeroBotao == casasVencedoras[i]) {
+                  botao.setBackground(Color.red);
+                }
+            }
+        }
     }
 
     /**
@@ -179,16 +206,15 @@ public class main extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JButton botaoAtual = (JButton) evt.getSource();
 
-        if (isFimJogo) {
+        if (botaoAtual.getText().isEmpty()) {
+            controller.setPecaBotao(botaoAtual, botaoAtual.getName());
 
-        } else {
-            if (botaoAtual.getText().isEmpty()) {
-                controller.setPecaBotao(botaoAtual, botaoAtual.getName());
+            if (controller.isFimJogo()) {
+                setCasasVencedoras(controller.getCasasVencedoras());
+                showMessageDialog(null, "Fim de jogo");
 
-                if (controller.isFimJogo()) {
-                    isFimJogo = true;
-                    showMessageDialog(null, "Fim de jogo");
-                }
+                controller.limparJogo();
+                limparJogo();
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

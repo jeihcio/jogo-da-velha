@@ -50,10 +50,8 @@ public class mainController {
         return true;
     }
 
-    private void limparJogo() {
-        pecaAtual = pecas.X;
-        casas = new pecas[9];
-        vencedor = null;
+    private boolean isVencedor() {
+        return motor.isVencedor(casas);
     }
 
     public void setPecaBotao(JButton botao, String numeracaoBotao) {
@@ -61,14 +59,19 @@ public class mainController {
         botao.setText(PegarEAlterarPecaAtual());
     }
 
-    public boolean isVencedor() {
-        return motor.isVencedor(casas);
+    public void limparJogo() {
+        pecaAtual = pecas.X;
+        casas = new pecas[9];
+        vencedor = null;
+    }
+    
+    public int[] getCasasVencedoras() {
+        return motor.getCasasVencedoras();
     }
 
     public boolean isFimJogo() {
 
         if (isVencedor() || isTodasCasasPreenchidas()) {
-            limparJogo();
             return true;
         }
 

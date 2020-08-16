@@ -13,5 +13,6 @@ github\jogo\da\velha\controller\motor\utils.class
 github\jogo\da\velha\view\main.class
 github\jogo\da\velha\view\main$8.class
 github\jogo\da\velha\controller\mainController.class
+github\jogo\da\velha\controller\motor\diagonal.class
 github\jogo\da\velha\view\main$10.class
 github\jogo\da\velha\view\main$3.class
