@@ -24,19 +24,19 @@ class colunas {
 
     private boolean primeiraColuna(pecas[] casas) {
         return verificarCasas(casas, new int[]{
-            0, 1, 2
+            0, 3, 6
         });
     }
 
     private boolean segundaColuna(pecas[] casas) {
         return verificarCasas(casas, new int[]{
-            3, 4, 5
+            1, 4, 7
         });
     }
 
     private boolean terceiraColuna(pecas[] casas) {
         return verificarCasas(casas, new int[]{
-            6, 7, 8
+            2, 5, 8
         });
     }
 
