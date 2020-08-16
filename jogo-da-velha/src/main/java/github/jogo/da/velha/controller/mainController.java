@@ -14,19 +14,15 @@ import javax.swing.JButton;
  * @author Jeihcio
  */
 public class mainController {
-    
+
     private pecas[] casas;
     private pecas pecaAtual;
     private pecas vencedor;
-    private boolean isFimJogo;
     private motor motor;
 
     public mainController() {
         motor = new motor();
-        pecaAtual = pecas.X;
-        casas = new pecas[9];
-        vencedor = null;
-        isFimJogo = false;
+        limparJogo();
     }
 
     private String PegarEAlterarPecaAtual() {
@@ -54,6 +50,12 @@ public class mainController {
         return true;
     }
 
+    private void limparJogo() {
+        pecaAtual = pecas.X;
+        casas = new pecas[9];
+        vencedor = null;
+    }
+
     public void setPecaBotao(JButton botao, String numeracaoBotao) {
         setPecaNaCasa(numeracaoBotao);
         botao.setText(PegarEAlterarPecaAtual());
@@ -65,11 +67,8 @@ public class mainController {
 
     public boolean isFimJogo() {
 
-        if (isVencedor()) {
-            return true;
-        }
-
-        if (isTodasCasasPreenchidas()) {
+        if (isVencedor() || isTodasCasasPreenchidas()) {
+            limparJogo();
             return true;
         }
 
