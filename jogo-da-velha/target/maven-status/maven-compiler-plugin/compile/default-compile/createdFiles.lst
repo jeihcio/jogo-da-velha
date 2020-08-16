@@ -6,8 +6,10 @@ github\jogo\da\velha\view\main$6.class
 github\jogo\da\velha\view\main$9.class
 github\jogo\da\velha\controller\motor\motor.class
 github\jogo\da\velha\view\main$5.class
+github\jogo\da\velha\controller\motor\linhas.class
 github\jogo\da\velha\controller\motor\colunas.class
 github\jogo\da\velha\view\main$4.class
+github\jogo\da\velha\controller\motor\utils.class
 github\jogo\da\velha\view\main.class
 github\jogo\da\velha\view\main$8.class
 github\jogo\da\velha\controller\mainController.class

@@ -11,27 +11,21 @@ import github.jogo.da.velha.model.pecas;
  *
  * @author Jeihcio
  */
-public class linhas {
+public class diagonal {
 
-    private boolean primeiraLinha(pecas[] casas) {
+    private boolean primeiraDiagonal(pecas[] casas) {
         return utils.verificarCasas(casas, new int[]{
-            0, 1, 2
+            0, 4, 8
         });
     }
 
-    private boolean segundaLinha(pecas[] casas) {
+    private boolean segundaDiagonal(pecas[] casas) {
         return utils.verificarCasas(casas, new int[]{
-            3, 4, 5
-        });
-    }
-
-    private boolean terceiraLinha(pecas[] casas) {
-        return utils.verificarCasas(casas, new int[]{
-            6, 7, 8
+            2, 4, 6
         });
     }
 
     public boolean isVencedor(pecas[] casas) {
-        return (primeiraLinha(casas) || segundaLinha(casas) || terceiraLinha(casas));
+        return (primeiraDiagonal(casas) || segundaDiagonal(casas));
     }
 }

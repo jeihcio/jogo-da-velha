@@ -14,13 +14,19 @@ import github.jogo.da.velha.model.pecas;
 public class motor {
 
     private colunas colunas;
+    private linhas linhas;
+    private diagonal diagonal;
 
     public motor() {
         colunas = new colunas();
+        linhas = new linhas();
+        diagonal = new diagonal();
     }
 
     public boolean isVencedor(pecas[] casas) {
-        return (colunas.isVencedor(casas));
+        return (linhas.isVencedor(casas)
+                || colunas.isVencedor(casas)
+                || diagonal.isVencedor(casas));
     }
 
 }
