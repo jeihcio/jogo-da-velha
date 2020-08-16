@@ -216,7 +216,7 @@ public class main extends javax.swing.JFrame {
 
             if (controller.isFimJogo()) {
                 setCasasVencedoras(controller.getCasasVencedoras());
-                showMessageDialog(null, "Fim de jogo");
+                showMessageDialog(null, controller.getTextVencedor());
 
                 controller.limparJogo();
                 limparJogo();

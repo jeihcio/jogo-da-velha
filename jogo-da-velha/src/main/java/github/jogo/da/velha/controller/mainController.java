@@ -64,9 +64,18 @@ public class mainController {
         casas = new pecas[9];
         vencedor = null;
     }
-    
+
     public int[] getCasasVencedoras() {
         return motor.getCasasVencedoras();
+    }
+
+    public String getTextVencedor() {
+        if (motor.getCasasVencedoras() == null) {
+            return "Jogo empatado!";
+        } else {
+            pecas pecaVencedora = casas[motor.getCasasVencedoras()[0]];
+            return String.format("O %s venceu!", String.valueOf(pecaVencedora));
+        }
     }
 
     public boolean isFimJogo() {
