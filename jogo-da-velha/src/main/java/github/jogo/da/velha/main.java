@@ -10,12 +10,15 @@ package github.jogo.da.velha;
  * @author Jeihcio
  */
 public class main extends javax.swing.JFrame {
+    
+    private mainController controller;
 
     /**
      * Creates new form main
      */
     public main() {
         initComponents();
+        controller = new mainController();
     }
 
     /**
@@ -42,31 +45,31 @@ public class main extends javax.swing.JFrame {
         setResizable(false);
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton1.setText("x");
+        jButton1.setName("button2"); // NOI18N
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton2.setText("x");
+        jButton2.setName("button1"); // NOI18N
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton3.setText("x");
+        jButton3.setName("button3"); // NOI18N
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton7.setText("x");
+        jButton7.setName("button5"); // NOI18N
 
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton8.setText("x");
+        jButton8.setName("button6"); // NOI18N
 
         jButton9.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton9.setText("x");
+        jButton9.setName("button4"); // NOI18N
 
         jButton10.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton10.setText("x");
+        jButton10.setName("button7"); // NOI18N
 
         jButton11.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton11.setText("x");
+        jButton11.setName("button8"); // NOI18N
 
         jButton12.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton12.setText("x");
+        jButton12.setName("button9"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
