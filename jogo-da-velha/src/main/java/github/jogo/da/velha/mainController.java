@@ -32,4 +32,8 @@ public class mainController {
         }
         return "O";
     }
+    
+    public void setPecaNaCasa(String nomeBotao){
+    
+    }
 }

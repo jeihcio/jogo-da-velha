@@ -5,6 +5,8 @@
  */
 package github.jogo.da.velha;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Jeihcio
@@ -45,10 +47,15 @@ public class main extends javax.swing.JFrame {
         setResizable(false);
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton2.setName(""); // NOI18N
+        jButton2.setName("1"); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton1.setName(""); // NOI18N
+        jButton1.setName("0"); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -56,35 +63,60 @@ public class main extends javax.swing.JFrame {
         });
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton3.setName(""); // NOI18N
+        jButton3.setName("2"); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton5.setName(""); // NOI18N
+        jButton5.setName("4"); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton6.setName(""); // NOI18N
+        jButton6.setName("5"); // NOI18N
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton4.setName(""); // NOI18N
+        jButton4.setName("3"); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton7.setName(""); // NOI18N
+        jButton7.setName("6"); // NOI18N
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton8.setName(""); // NOI18N
+        jButton8.setName("7"); // NOI18N
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton9.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton9.setName(""); // NOI18N
+        jButton9.setName("8"); // NOI18N
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,16 +173,13 @@ public class main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        JButton botaoAtual = (JButton)evt.getSource();
+        
+        if (botaoAtual.getText().isEmpty()){
+            botaoAtual.setText(controller.getPecaAtual());
+            controller.setPecaNaCasa(botaoAtual.getName());
+        }        
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
