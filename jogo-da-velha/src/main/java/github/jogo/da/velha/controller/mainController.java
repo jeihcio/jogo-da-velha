@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package github.jogo.da.velha;
+package github.jogo.da.velha.controller;
 
 import javax.swing.JButton;
 
@@ -54,21 +54,22 @@ public class mainController {
         return true;
     }
 
-    public void setPecaBotao(JButton botao) {
-        setPecaNaCasa(botao.getName());
+    public void setPecaBotao(JButton botao, String numeracaoBotao) {
+        setPecaNaCasa(numeracaoBotao);
         botao.setText(PegarEAlterarPecaAtual());
     }
 
     public boolean isVencedor() {
-        return true;
+        return false;
     }
 
     public boolean isFimJogo() {
-        if (isTodasCasasPreenchidas()) {
+
+        if (isVencedor()) {
             return true;
         }
 
-        if (isVencedor()) {
+        if (isTodasCasasPreenchidas()) {
             return true;
         }
 

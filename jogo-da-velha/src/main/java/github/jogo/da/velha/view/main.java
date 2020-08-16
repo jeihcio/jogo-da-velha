@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package github.jogo.da.velha;
+package github.jogo.da.velha.view;
 
+import github.jogo.da.velha.controller.mainController;
 import javax.swing.JButton;
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -179,7 +180,7 @@ public class main extends javax.swing.JFrame {
         JButton botaoAtual = (JButton) evt.getSource();
 
         if (botaoAtual.getText().isEmpty()) {
-            controller.setPecaBotao(botaoAtual);
+            controller.setPecaBotao(botaoAtual, botaoAtual.getName());
 
             if (controller.isFimJogo()) {
                 isFimJogo = true;
