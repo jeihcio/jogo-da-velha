@@ -6,6 +6,7 @@
 package github.jogo.da.velha;
 
 import javax.swing.JButton;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
@@ -173,12 +174,16 @@ public class main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JButton botaoAtual = (JButton)evt.getSource();
-        
-        if (botaoAtual.getText().isEmpty()){
-            botaoAtual.setText(controller.getPecaAtual());
+        JButton botaoAtual = (JButton) evt.getSource();
+
+        if (botaoAtual.getText().isEmpty()) {
             controller.setPecaNaCasa(botaoAtual.getName());
-        }        
+            botaoAtual.setText(controller.PegarEAlterarPecaAtual());
+
+            if (controller.isFimJogo()) {
+                showMessageDialog(null, "Fim de jogo");
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
