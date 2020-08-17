@@ -7,6 +7,8 @@ package github.jogo.da.velha.controller;
 
 import github.jogo.da.velha.controller.motor.motor;
 import github.jogo.da.velha.model.pecas;
+import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.JButton;
 
 /**
@@ -76,6 +78,29 @@ public class mainController {
             pecas pecaVencedora = casas[motor.getCasasVencedoras()[0]];
             return String.format("O %s venceu!", String.valueOf(pecaVencedora));
         }
+    }
+
+    private ArrayList<Integer> getCasasVazias(pecas[] casas) {
+        ArrayList<Integer> resultado = new ArrayList<Integer>();
+
+        for (int i = 0; i < casas.length; i++) {
+            if (casas[i] == null) {
+                resultado.add(i);
+            }
+        }
+
+        return resultado;
+    }
+
+    public void escolherPecaNaoSelecionadaAleatoriamente(ArrayList<JButton> listaBotoes) {
+        Random r = new Random();
+        
+        ArrayList<Integer> casasVazias = getCasasVazias(casas);        
+        int numeroAleatorio = r.nextInt(casasVazias.size() - 1);
+        int casa = casasVazias.get(numeroAleatorio);
+
+        JButton botao = listaBotoes.get(casa);
+        botao.doClick();
     }
 
     public boolean isFimJogo() {

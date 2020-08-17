@@ -7,6 +7,10 @@ package github.jogo.da.velha.view;
 
 import github.jogo.da.velha.controller.mainController;
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -17,7 +21,8 @@ import static javax.swing.JOptionPane.showMessageDialog;
 public class main extends javax.swing.JFrame {
 
     private mainController controller;
-    private JButton[] listaBotoes = new JButton[9];
+    private ArrayList<JButton> listaBotoes = new ArrayList<JButton>();
+    private boolean clickAutomatico = false;
 
     /**
      * Creates new form main
@@ -26,15 +31,15 @@ public class main extends javax.swing.JFrame {
         initComponents();
         controller = new mainController();
 
-        listaBotoes[0] = jButton1;
-        listaBotoes[1] = jButton2;
-        listaBotoes[2] = jButton3;
-        listaBotoes[3] = jButton4;
-        listaBotoes[4] = jButton5;
-        listaBotoes[5] = jButton6;
-        listaBotoes[6] = jButton7;
-        listaBotoes[7] = jButton8;
-        listaBotoes[8] = jButton9;
+        listaBotoes.add(jButton1);
+        listaBotoes.add(jButton2);
+        listaBotoes.add(jButton3);
+        listaBotoes.add(jButton4);
+        listaBotoes.add(jButton5);
+        listaBotoes.add(jButton6);
+        listaBotoes.add(jButton7);
+        listaBotoes.add(jButton8);
+        listaBotoes.add(jButton9);
     }
 
     private void limparJogo() {
@@ -220,6 +225,13 @@ public class main extends javax.swing.JFrame {
 
                 controller.limparJogo();
                 limparJogo();
+            } else {
+                if (!clickAutomatico) {
+                    clickAutomatico = true;
+                    controller.escolherPecaNaoSelecionadaAleatoriamente(listaBotoes);
+                }
+
+                clickAutomatico = false;
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
